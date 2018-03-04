@@ -1,0 +1,6 @@
+<li class="pt-1 pb-1">
+    <input [id]="star" type="checkbox" [checked]="checkedAll"/>
+    <label [for]="star">
+      <i *ngFor="let s of nStar" class="i-star star"></i>
+    </label>
+  </li>

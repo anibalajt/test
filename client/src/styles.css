@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background: yellow !important;
+}
+.bg-tm {
+  background: #0d3f81;
+}
+.bg-white {
+  background: #fff;
+}
+
+ul,
+li {
+  list-style-type: none;
+  position: relative;
+}
+.dropdown input:checked ~ ul.submenu {
+  max-height: 300px;
+  transition: max-height 0.5s ease-in;
+}
+
+ul.submenu {
+  max-height: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  overflow: hidden;
+  list-style-type: none;
+  transition: max-height 0.5s ease-out;
+  position: relative;
+  min-width: 100%;
+}
+
+.dropdown .checkNav {
+  display: none;
+}
+
+.star {
+  color: #ffbb00;
+}
+
+.c-blue {
+  font-weight: 600;
+  color: #0679b3;
+}
