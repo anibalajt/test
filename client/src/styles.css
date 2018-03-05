@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background: yellow !important;
+  background: #f4f4f4 !important;
 }
 .bg-tm {
   background: #0d3f81;
@@ -8,21 +8,21 @@ body {
 .bg-white {
   background: #fff;
 }
-
+.fixedSpace{margin-top: 75px;}
 ul,
 li {
   list-style-type: none;
   position: relative;
 }
-.dropdown input:checked ~ ul.submenu {
-  max-height: 300px;
+.content-nav input:checked ~ ul.submenu {
+  max-height: 550px;
   transition: max-height 0.5s ease-in;
 }
 
 ul.submenu {
   max-height: 0;
   padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding-bottom: 2px !important;
   overflow: hidden;
   list-style-type: none;
   transition: max-height 0.5s ease-out;
@@ -30,7 +30,7 @@ ul.submenu {
   min-width: 100%;
 }
 
-.dropdown .checkNav {
+.content-nav .checkNav {
   display: none;
 }
 
@@ -41,4 +41,32 @@ ul.submenu {
 .c-blue {
   font-weight: 600;
   color: #0679b3;
+}
+.c-price {
+  color: #e16800;
+}
+
+.hotel-image {
+  background-size: cover;
+  background-position: 50%;
+}
+.priceXnight {
+  text-align: center;
+}
+.price {
+  text-align: center;
+}
+.amenity {
+  font-size: 22px;
+  margin-right: 4px;
+}
+.boxShadow{
+  box-shadow: 0px 1px 0px 1px rgba(0,0,0,0.12);
+
+}
+
+@media only screen and (max-width: 768px) {
+  .hotel-image {
+    height: 260px;
+  }
 }

@@ -1,3 +1,22 @@
-<p>
-  hotel works!
-</p>
+<div class="from-group row bg-white mb-3 boxShadow">
+  <div class="col-sm-12 col-md-4 pl-0 hotel-image" [ngStyle]="{'background-image':image}">
+  </div>
+  <div class="col-sm-12 col-md-5">
+    <label for="check01" class="mb-0 mt-2 c-blue d-block">
+      {{hotel.name}}
+    </label>
+    <app-stars [star]="hotel.stars" [checkedHide]="true" prefixes="hotel"></app-stars>
+    <app-amenities *ngFor="let amenity of hotel.amenities" [amenity]="amenity"></app-amenities>
+  </div>
+  <div class="col-sm-12 col-md-3 mt-4 mb-4">
+    <div class="priceXnight">
+      Precio por noche por habitación
+    </div>
+    <div class="price  p-2 c-price">
+      ARS
+      <span style="font-size: 18px;">{{hotel.price}}</span>
+    </div>
+    <button type="submit" class="btn bg-tm text-white btn-lg btn-block">Ver hotel</button>
+
+  </div>
+</div>

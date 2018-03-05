@@ -10,6 +10,7 @@ import { HotelListComponent } from "./components/hotel-list/hotel-list.component
 import { NavbarComponent } from "./components/navbar/navbar.component";
 
 import { DataService } from "./services/data.service";
+import { AmenitiesComponent } from './components/amenities/amenities.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DataService } from "./services/data.service";
     StarsComponent,
     HotelComponent,
     HotelListComponent,
-    NavbarComponent
+    NavbarComponent,
+    AmenitiesComponent
   ],
   imports: [BrowserModule, FormsModule],
   providers: [DataService],

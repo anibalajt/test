@@ -1,45 +1,50 @@
-<style>
-</style>
-<div class="px-4 p-2 bg-white">
-  Filtros
-</div>
-<div class="dropdown mt-1 bg-white">
-  <li>
-    <input id="check01" class="checkNav" type="checkbox" checked="checked" name="menu" />
-    <label for="check01" class="mb-0 px-4 p-2 c-blue d-block">
-      <i class="i-search"></i>
-      Nombre de hotel
-    </label>
-    <ul class="submenu bg-white px-4 p-2 pt-0 mb-0">
+<div class="content-nav">
+  <input id="allNav" class="checkNav" type="checkbox" checked="checked" name="menu" />
+  <label for="allNav" class="d-block mb-0 boxShadow">
+    <div class="px-4 p-2 bg-white">
+      Filtros
+    </div>
+  </label>
+  <ul class="submenu pl-0">
+    <div class="dropdown mt-1 bg-white boxShadow">
       <li>
-        <form class="row">
-          <div class="form-group col-sm-8 col-md-12 col-lg-8">
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          </div>
-          <div class="form-group col-sm-4 col-md-12 col-lg-4">
-            <button type="submit" class="btn bg-tm text-white">Aceptar</button>
-          </div>
-        </form>
-      </li>
-    </ul>
-  </li>
-</div>
-
-<div class="dropdown mt-1 bg-white">
-  <li>
-    <input id="check02" class="checkNav" type="checkbox" checked="checked" name="menu" />
-    <label for="check02" class="mb-0 px-4 p-2 c-blue d-block">
-      <i class="i-star"></i>
-      Estrellas
-    </label>
-    <ul class="submenu bg-white px-4 p-2 pt-0 mb-0">
-      <li>
-        <input id="allStar" type="checkbox" (click)="this.allChecked()" />
-        <label for="allStar" class="">
-          Todas las sstrellas
+        <input id="check01" class="checkNav" type="checkbox" checked="checked" name="menu" />
+        <label for="check01" class="mb-0 px-4 p-2 c-blue d-block">
+          <i class="i-search"></i>
+          Nombre de hotel
         </label>
+        <ul class="submenu bg-white px-4 p-2 pt-0 mb-0">
+          <li>
+            <form class="row">
+              <div class="form-group col-sm-8 col-md-12 col-lg-8">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese el nombre del hotel">
+              </div>
+              <div class="form-group col-sm-4 col-md-12 col-lg-4">
+                <button type="submit" class="btn bg-tm text-white">Aceptar</button>
+              </div>
+            </form>
+          </li>
+        </ul>
       </li>
-      <app-stars *ngFor="let star of [5,4,3,2,1]" [star]="star" [checkedAll]="checkedAll"></app-stars>
-    </ul>
-  </li>
+    </div>
+
+    <div class="dropdown mt-1 bg-white mb-0 boxShadow">
+      <li>
+        <input id="check02" class="checkNav" type="checkbox" checked="checked" name="menu" />
+        <label for="check02" class="mb-0 px-4 p-2 c-blue d-block">
+          <i class="i-star"></i>
+          Estrellas
+        </label>
+        <ul class="submenu bg-white px-4 p-2 pt-0 mb-0">
+          <li>
+            <input id="allStar" type="checkbox" (click)="this.allChecked()" />
+            <label for="allStar" class="">
+              Todas las sstrellas
+            </label>
+          </li>
+          <app-stars *ngFor="let star of [5,4,3,2,1]" [star]="star" prefixes="nav" [checkedAll]="checkedAll"></app-stars>
+        </ul>
+      </li>
+    </div>
+  </ul>
 </div>
