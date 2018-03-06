@@ -6,13 +6,7 @@ import { Hotel } from "../../models/hotel";
   styleUrls: ["./hotel.component.css"]
 })
 export class HotelComponent implements OnInit {
-  @Input("hotel")
-  hotel = {
-    name: "",
-    stars: "",
-    amenities: "",
-    price: ""
-  };
+  @Input("hotel") hotel: Hotel;
   image: string;
   constructor() {}
 
