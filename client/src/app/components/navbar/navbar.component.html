@@ -1,8 +1,10 @@
-<div class="content-nav">
+<div class="content-nav ">
   <input id="allNav" class="checkNav" type="checkbox" checked="checked" name="menu" />
   <label for="allNav" class="d-block mb-0 boxShadow">
-    <div class="px-4 p-2 bg-white">
-      Filtros
+    <div class="px-4 p-2 bg-white contentFilter">
+      <!-- Filtros -->
+      <i class="i-arrow_drop_up"></i>
+      <i class="i-arrow_drop_down"></i>
     </div>
   </label>
   <ul class="submenu pl-0">
@@ -12,15 +14,18 @@
         <label for="check01" class="mb-0 px-4 p-2 c-blue d-block">
           <i class="i-search"></i>
           Nombre de hotel
+          <i class="i-arrow_drop_up arrow"></i>
+          <i class="i-arrow_drop_down arrow"></i>
         </label>
         <ul class="submenu bg-white px-4 p-2 pt-0 mb-0">
           <li>
             <form class="row">
-              <div class="form-group col-sm-8 col-md-12 col-lg-8">
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese el nombre del hotel">
+              <div class="form-group col-sm-8 col-md-12 col-lg-8" style="margin-top: 5px;">
+                <input #box (keyup)="getValue(box.value)" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="Ingrese el nombre del hotel">
               </div>
-              <div class="form-group col-sm-4 col-md-12 col-lg-4">
-                <button type="submit" class="btn bg-tm text-white">Aceptar</button>
+              <div class="form-group col-sm-4 col-md-12 col-lg-4" style="margin-top: 5px;">
+                <button type="submit" class="btn bg-tm text-white" (click)="getHotels()">Aceptar</button>
               </div>
             </form>
           </li>
@@ -34,6 +39,8 @@
         <label for="check02" class="mb-0 px-4 p-2 c-blue d-block">
           <i class="i-star"></i>
           Estrellas
+          <i class="i-arrow_drop_up arrow"></i>
+          <i class="i-arrow_drop_down arrow"></i>
         </label>
         <ul class="submenu bg-white px-4 p-2 pt-0 mb-0">
           <li>
@@ -42,7 +49,7 @@
               Todas las sstrellas
             </label>
           </li>
-          <app-stars *ngFor="let star of [5,4,3,2,1]" [star]="star" prefixes="nav" [checkedAll]="checkedAll"></app-stars>
+          <app-stars *ngFor="let star of [5,4,3,2,1]" [star]="star" prefixes="nav" [checkedAll]="checkedAll" (filterStars)="filterStars($event)"></app-stars>
         </ul>
       </li>
     </div>

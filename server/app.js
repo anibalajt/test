@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import api from "./routes";
 
 let app = express();
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -14,6 +15,8 @@ app.use(function(req, res, next) {
 });
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use(express.static(__dirname + '/images/hotels'));
 app.use("/api", api);
 
 module.exports = app;

@@ -1,5 +1,5 @@
 <li class="pt-1 pb-1">
-  <input [id]="clase" type="checkbox" [checked]="checkedAll" [hidden]="checkedHide" />
+  <input [id]="clase" type="checkbox" [checked]="checkedAll" [hidden]="checkedHide" (change)="filter(star)" />
   <label [for]="clase">
     <i *ngFor="let s of nStar" class="i-star star"></i>
   </label>

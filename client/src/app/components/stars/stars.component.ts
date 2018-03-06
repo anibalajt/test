@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "app-stars",
@@ -10,15 +10,22 @@ export class StarsComponent implements OnInit {
   @Input("prefixes") prefixes: String;
   @Input("checkedAll") checkedAll: boolean;
   @Input("checkedHide") checkedHide: boolean;
+  @Output() filterStars: EventEmitter<any> = new EventEmitter();
+
   nStar: number;
   clase: String;
   constructor() {}
 
   ngOnInit() {
     // console.log(this.prefixes);
-    this.clase = `${this.prefixes}${this.star}`
+    this.clase = `${this.prefixes}${this.star}`;
     this.nStar = Array.apply(null, Array(this.star)).map(function(_, i) {
       return i;
+    });
+  }
+  filter(star) {
+    this.filterStars.emit({
+      stars: star
     });
   }
 }

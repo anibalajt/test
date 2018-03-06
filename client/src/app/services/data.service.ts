@@ -1,13 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import  "rxjs/add/operator/map";
-// import { Observable } from "rxjs";
+import "rxjs/add/operator/map";
 
 import { Hotel } from "../models/hotel";
-
-// const httpOptions = {
-//   headers: new HttpHeaders({ "Content-Type": "application/json" })
-// };
 
 @Injectable()
 export class DataService {

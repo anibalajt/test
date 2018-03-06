@@ -1,11 +1,12 @@
 <app-header></app-header>
 <div class="container-fluid p-4 fixedSpace">
   <div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-4" >
-      <app-navbar></app-navbar>
+    <div class="col-sm-12 col-md-12 col-lg-4">
+      <app-navbar (handleHotelsFilter)="offset=0;limit=8;hotels = [];handleHotelsFilter($event)"></app-navbar>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-8">
-      <app-hotel-list></app-hotel-list>
+      <app-hotel-list [hotels]="hotels" [btnshow]="btnshow" (handleSearchfor)="handleSearchfor()"></app-hotel-list>
+      <div *ngIf="noData">No hay hoteles para tu búsqueda</div>
     </div>
   </div>
 </div>

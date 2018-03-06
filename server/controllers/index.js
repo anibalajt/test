@@ -15,7 +15,7 @@ export const hotels = (req, res) => {
 /************************ Filtrar por nombre y estrellas **********************/
 /******************************************************************************/
 export const filter = (req, res) => {
-  let { stars, name } = req.query;
+  let { stars, name, offset, limit } = req.query;
   let hoteles;
   if (stars) {
     stars = stars.split(",");
@@ -28,6 +28,7 @@ export const filter = (req, res) => {
   if (!hoteles) {
     hoteles = data;
   }
+  hoteles = hoteles.slice(offset, limit);
   res.status(201).send(hoteles);
 };
 

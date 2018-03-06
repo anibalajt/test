@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?c8gvb8');
-  src:  url('fonts/icomoon.eot?c8gvb8#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?c8gvb8') format('truetype'),
-    url('fonts/icomoon.woff?c8gvb8') format('woff'),
-    url('fonts/icomoon.svg?c8gvb8#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?n0d9po');
+  src:  url('fonts/icomoon.eot?n0d9po#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?n0d9po') format('truetype'),
+    url('fonts/icomoon.woff?n0d9po') format('woff'),
+    url('fonts/icomoon.svg?n0d9po#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,12 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.i-arrow_drop_up:before {
+  content: "\e913";
+}
+.i-arrow_drop_down:before {
+  content: "\e914";
+}
 .i-bathrobes:before {
   content: "\e900";
   color: #59595c;
@@ -97,4 +103,97 @@ i {
 }
 .i-star:before {
   content: "\e912";
+}
+.i-download:before {
+  content: "\e960";
+}
+.i-upload:before {
+  content: "\e961";
+}
+.i-undo:before {
+  content: "\e965";
+}
+.i-redo:before {
+  content: "\e966";
+}
+.i-undo2:before {
+  content: "\e967";
+}
+.i-redo2:before {
+  content: "\e968";
+}
+.i-forward:before {
+  content: "\e969";
+}
+.i-reply:before {
+  content: "\e96a";
+}
+.i-spinner11:before {
+  content: "\e984";
+}
+.i-loop2:before {
+  content: "\ea2e";
+}
+.i-arrow-up-left:before {
+  content: "\ea31";
+}
+.i-arrow-up:before {
+  content: "\ea32";
+}
+.i-arrow-up-right:before {
+  content: "\ea33";
+}
+.i-arrow-right:before {
+  content: "\ea34";
+}
+.i-arrow-down-right:before {
+  content: "\ea35";
+}
+.i-arrow-down:before {
+  content: "\ea36";
+}
+.i-arrow-down-left:before {
+  content: "\ea37";
+}
+.i-arrow-left:before {
+  content: "\ea38";
+}
+.i-arrow-up-left2:before {
+  content: "\ea39";
+}
+.i-arrow-up2:before {
+  content: "\ea3a";
+}
+.i-arrow-up-right2:before {
+  content: "\ea3b";
+}
+.i-arrow-right2:before {
+  content: "\ea3c";
+}
+.i-arrow-down-right2:before {
+  content: "\ea3d";
+}
+.i-arrow-down2:before {
+  content: "\ea3e";
+}
+.i-arrow-down-left2:before {
+  content: "\ea3f";
+}
+.i-arrow-left2:before {
+  content: "\ea40";
+}
+.i-circle-up:before {
+  content: "\ea41";
+}
+.i-circle-right:before {
+  content: "\ea42";
+}
+.i-circle-down:before {
+  content: "\ea43";
+}
+.i-circle-left:before {
+  content: "\ea44";
+}
+.i-tab:before {
+  content: "\ea45";
 }

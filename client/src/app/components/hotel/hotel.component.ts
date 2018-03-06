@@ -6,13 +6,17 @@ import { Hotel } from "../../models/hotel";
   styleUrls: ["./hotel.component.css"]
 })
 export class HotelComponent implements OnInit {
-  @Input("hotel") hotel: Hotel[];
+  @Input("hotel")
+  hotel = {
+    name: "",
+    stars: "",
+    amenities: "",
+    price: ""
+  };
   image: string;
   constructor() {}
 
   ngOnInit() {
-    // console.log(this.hotel["image"]);
-    this.image = `url(../../../assets/images/hotels/${this.hotel["image"]})`
-    // console.log(this.image);
+    this.image = `url(./assets/images/hotels/${this.hotel["image"]})`;
   }
 }

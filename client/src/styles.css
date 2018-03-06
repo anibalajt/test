@@ -8,7 +8,9 @@ body {
 .bg-white {
   background: #fff;
 }
-.fixedSpace{margin-top: 75px;}
+.fixedSpace {
+  margin-top: 75px;
+}
 ul,
 li {
   list-style-type: none;
@@ -60,13 +62,58 @@ ul.submenu {
   font-size: 22px;
   margin-right: 4px;
 }
-.boxShadow{
-  box-shadow: 0px 1px 0px 1px rgba(0,0,0,0.12);
-
+.boxShadow {
+  box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.12);
 }
-
+.arrow {
+  float: right;
+  font-size: 27px;
+}
 @media only screen and (max-width: 768px) {
   .hotel-image {
     height: 260px;
+  }
+}
+.contentFilter:after {
+  content: "Filtros";
+}
+
+
+.dropdown li input:not(:checked) ~ label i.i-arrow_drop_up{
+  display: none;
+}
+.dropdown li input:checked ~ label i.i-arrow_drop_down{
+  display: none;
+}
+.contentFilter i {
+  position: relative;
+  left: 69px;
+  font-size: 19px;
+  top: 4px;
+  color: #0679b3;
+}
+/* .content-nav > label {
+  pointer-events: none;
+} */
+@media (min-width: 992px) {
+  .content-nav  label .contentFilter i {
+    display: none !important;
+  }
+}
+@media (max-width: 992px) {
+  /* .content-nav > label {
+    pointer-events: inherit;
+} */
+  .content-nav input:not(:checked) ~ label i.i-arrow_drop_up {
+    display: none;
+  }
+  .content-nav input:checked ~ label i.i-arrow_drop_down {
+    display: none;
+  }
+  .contentFilter {
+    text-align: center;
+  }
+  .contentFilter:after {
+    content: "Filtrar";
   }
 }
