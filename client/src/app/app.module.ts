@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./components/header/header.component";
@@ -10,7 +11,7 @@ import { HotelListComponent } from "./components/hotel-list/hotel-list.component
 import { NavbarComponent } from "./components/navbar/navbar.component";
 
 import { DataService } from "./services/data.service";
-import { AmenitiesComponent } from './components/amenities/amenities.component';
+import { AmenitiesComponent } from "./components/amenities/amenities.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { AmenitiesComponent } from './components/amenities/amenities.component';
     NavbarComponent,
     AmenitiesComponent
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [DataService],
   bootstrap: [AppComponent]
 })

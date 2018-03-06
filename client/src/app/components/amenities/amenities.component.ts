@@ -11,7 +11,7 @@ export class AmenitiesComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.amenity);
+    // console.log(this.amenity);
     this.icon = `i-${this.amenity} amenity`;
   }
 }

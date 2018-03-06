@@ -11,10 +11,38 @@ export const hotels = (req, res) => {
   res.status(201).send(hoteles);
 };
 
+/******************************************************************************/
+/************************ Filtrar por nombre y estrellas **********************/
+/******************************************************************************/
 export const filter = (req, res) => {
-  const { stars } = req.query;
-  const hoteles = data.filter(hotel => {
-    return hotel.stars == stars ? hotel : null;
-  });
+  let { stars, name } = req.query;
+  let hoteles;
+  if (stars) {
+    stars = stars.split(",");
+    hoteles = filterStar(data, stars);
+  }
+  if (name) {
+    hoteles = hoteles ? hoteles : data;
+    hoteles = filterName(hoteles, name);
+  }
+  if (!hoteles) {
+    hoteles = data;
+  }
   res.status(201).send(hoteles);
+};
+
+const filterStar = (data, stars) => {
+  return data.filter(hotel => {
+    for (let i = 0; i < stars.length; i++) {
+      if (hotel.stars == stars[i]) {
+        return hotel;
+      }
+    }
+  });
+};
+
+const filterName = (data, name) => {
+  return data.filter(hotel => {
+    return hotel.name.indexOf(name) > -1 ? hotel : null;
+  });
 };

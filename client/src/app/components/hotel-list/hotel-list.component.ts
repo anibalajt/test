@@ -7,11 +7,23 @@ import { DataService } from "../../services/data.service";
   styleUrls: ["./hotel-list.component.css"]
 })
 export class HotelListComponent implements OnInit {
-  hotels: Hotel[];
+  hotels: Hotel[] = [];
+  hotelXpage: number = 8;
+  offeset: number = 0;
+  limit: number = 8;
+  total: number;
+  btnshow: boolean = true;
   constructor(public dataServices: DataService) {}
 
   ngOnInit() {
-    // console.log(this.dataServices.getHotel());
-    this.hotels = this.dataServices.getHotel();
+    this.getHotels(this.offeset, this.limit);
+  }
+  getHotels(offset, limit) {
+    this.dataServices.getHotel(offset, limit).subscribe(hotels => {
+      this.btnshow = hotels.length < this.hotelXpage ? false : true;
+      this.hotels = [...this.hotels, ...hotels];
+      this.offeset = this.limit;
+      this.limit = this.limit + this.hotelXpage;
+    });
   }
 }

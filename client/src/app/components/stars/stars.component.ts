@@ -15,7 +15,7 @@ export class StarsComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.prefixes);
+    // console.log(this.prefixes);
     this.clase = `${this.prefixes}${this.star}`
     this.nStar = Array.apply(null, Array(this.star)).map(function(_, i) {
       return i;
